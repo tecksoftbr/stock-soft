@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<hibernate-mapping>
+	<class name="modelo.EmailAgenda" table="Email_Agenda">
+	<id name="codigo" column="codigo_Email">
+	<generator class="increment"></generator>
+	</id>
+	
+	<property name="email"             column="email"        length="30"></property>
+	
+
+	
+	<many-to-one name="Agenda" column="codigo_agenda" class="modelo.Agenda" 
+    not-null="true"/>
+
+         
+     </class>
+     </hibernate-mapping>

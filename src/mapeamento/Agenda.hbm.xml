@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<hibernate-mapping>
+	<class name="modelo.Agenda" table="Agenda">
+	<id name="codigoAgenda" column="codigo_agenda">
+	<generator class="increment"></generator>
+	</id>
+	
+	<property name="nome"             column="nome"                length="80" />
+	<property name="complemento"      column="complemento"         length="80"/>
+	<property name="observacao"       column="observacao"          length="200"/>
+	
+	<bag name ="telefones"  cascade="all" lazy="true">
+	<key column ="codigo_agenda"/>
+	<one-to-many class ="modelo.TelefoneAgenda" />	
+	</bag>
+
+	<bag name ="emails"  cascade="all" lazy="true">
+	<key column ="codigo_agenda"/>
+	<one-to-many class ="modelo.EmailAgenda" />	
+	</bag>
+
+	
+	
+	</class>
+	</hibernate-mapping>

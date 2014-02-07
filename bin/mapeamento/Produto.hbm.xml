@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<hibernate-mapping>
+	<class name="modelo.Produto" table="produto">
+	<id name="codigo" column="codigo_produto" length="10">
+	<generator class="increment"></generator>
+	</id> 
+	
+	<property name="codigoBarra"           column="codigoBarra"                  length="15" />
+	<property name="descricao"             column="descricao"                    length="200" />
+	<property name="quantidade"            column="quantidade"                   length="10" />
+	<property name="quantidadeMinima"      column="quantidadeMinima"             length="10" />
+	<property name="precoCusto"            column="precoCusto"                   length="10" />
+	<property name="precoVenda"            column="precoVenda"                   length="10" />
+	<property name="unidade"               column="unidade"                      length="100" />
+	<property name="localizacao"           column="localizacao"                  length="100" />
+	<property name="categoria"             column="categoria"                    length="100" />
+    <property name="modelo"                column="modelo"                       length="100" />
+	<property name="cor"                   column="cor"                          length="100" />
+	<property name="peso"                  column="peso"                         length="100" />
+	<property name="espessura"             column="espessura"                    length="100" />
+	<property name="dataVencimento"        column="dataVencimento"               length="12" />
+	<property name="fabricante"            column="fabricante"                   length="100" />
+	<property name="fornecedor"            column="fornecedor"                   length="100" />
+ 
+    <bag name="Fornecedor" table="fornecedor_produto" cascade="all">
+    <key column="codigo_produto"></key>
+    <many-to-many class="modelo.Fornecedor" column="codigo_fornecedor" not-found="ignore"></many-to-many>
+    </bag>   
+    
+    <bag name="Estoque" table="produto_estoque" cascade="all">
+    <key column="codigo_produto"></key>
+    <many-to-many class="modelo.Estoque" column="codigo_estoque" not-found="ignore"></many-to-many>
+    </bag>
+	
+	</class>
+	</hibernate-mapping>

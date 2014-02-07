@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<hibernate-mapping>
+	<class name="modelo.Estoque" table="estoque">
+	<id name="codigo" column="codigo_estoque" length="10">
+	<generator class="increment"></generator>
+	</id> 
+	 
+	<property name="nome"               column="nome"               length="20" />
+	<property name="dataCadastro"       column="dataCadastro"       length="15" />
+	<property name="logradouro"         column="logradouro"         length="50" />
+	<property name="bairro"             column="bairro"             length="30" />
+	<property name="cidade"             column="cidade"             length="30" />
+	<property name="uf"                 column="uf"                 length="30" />
+	<property name="cep"                column="cep"                length="10" />
+	<property name="observacao"         column="observacao"         length="200" />
+	<property name="responsavel"        column="responsavel"        length="30" />
+
+ <!-- 
+    <bag name="Produto" table="estoque_produto" cascade="all">
+    <key column="codigo_estoque"></key>
+    <many-to-many class="modelo.Produto" column="codigo_produto" not-found="ignore"></many-to-many>
+    </bag>   
+    
+-->
+	
+	</class>
+	</hibernate-mapping>

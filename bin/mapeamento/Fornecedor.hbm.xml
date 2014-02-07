@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<hibernate-mapping>
+	<class name="modelo.Fornecedor" table="fornecedor">
+	<id name="codigo" column="codigo_fornecedor">
+	<generator class="increment"></generator>
+	</id>
+	
+	<property name="razaoSocial"              column="razaoSocial"            length="100" />
+	<property name="nomeFantasia"             column="nomeFantasia"           length="100" />
+	<property name="cpf_cnpj"                 column="cpf_cnpj"               length="20" />
+	<property name="cnae"                     column="cnae"                   length="10" />
+	<property name="inscricaoEstadual"        column="inscricaoEstadual"      length="10" />
+	<property name="inscricaoMunicipal"       column="inscricaoMunicipal"     length="10" />
+	<property name="site"                     column="site"                   length="200" />
+	<property name="email"                    column="email"                  length="100" />
+	<property name="logradouro"               column="logradouro"             length="200" />
+	<property name="bairro"                   column="bairro"                 length="100" />
+	<property name="cidade"                   column="cidade"                 length="100" />
+	<property name="uf"                       column="uf"                     length="100" />
+	<property name="cep"                      column="cep"                    length="10" />
+	<property name="observacao"               column="observacao"             length="300" />
+	<property name="urlImagem"                column="urlImagem"              length="300" />
+
+    <set name ="telefoneFornecedor" inverse="true">
+    <key column ="codigoTelefoneFornecedor"/>
+    <one-to-many class ="modelo.TelefoneFornecedor" />	
+    </set>
+
+<!--  
+
+    <set name="podutoFornecedor" table="produto_fornecedor" cascade="all">
+    <key column="codigo_fornecedor"></key>
+    <many-to-many class="modelo.Produto" column="codigo_produto" not-found="ignore"></many-to-many>
+    </set>
+    
+    -->
+	
+	</class>
+	</hibernate-mapping>

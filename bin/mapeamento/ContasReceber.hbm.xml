@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<hibernate-mapping>
+	<class name="modelo.ContasPagar" table="contasPagar">
+	<id name="codigo" column="codigo_ pagar">
+	<generator class="increment"></generator>
+	</id>
+	<property name="titulo"                column="titulo"                 length="30" />
+	<property name="descricao"             column="descricao"              length="100" />
+	<property name="valor"                 column="valor"                  length="10" />
+	<property name="formaPagamento"        column="formaPagamento"         length="30" />
+	<property name="dataVencimento"        column="dataVencimento"         length="25" />
+	<property name="observacao"            column="observacao"             length="200" />
+	<property name="dataAviso"             column="dataAviso"              length="25" />
+	<property name="nomeUsuario"           column="nomeUsuario"            length="20" />
+	<property name="dataAtual"             column="dataAtual"              length="25" />
+    <property name="origem"                column="origem"                 length="30" />
+
+	</class>
+	</hibernate-mapping>

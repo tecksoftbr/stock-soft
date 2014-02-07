@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<hibernate-mapping>
+	<class name="modelo.Empresa" table="empresa">
+	<id name="codigo" column="codigo_empresa">
+	<generator class="increment"></generator>
+	</id>
+	<property name="nomeFantasia"            column="nome_fantasia"           length="100" />
+	<property name="razaoSocial"             column="razao_social"            length="100" />
+	<property name="cpf_cnpj"                column="cpf_cnpj"                length="20" />
+	<property name="cnae"                    column="cnae"                    length="10" />
+	<property name="inscricaoEstadual"       column="inscricao_estadual"      length="10" />
+	<property name="inscricaoMunicipal"      column="inscricao_municipal"     length="10" />
+	<property name="tributacao"              column="tributacao"              length="30" />
+	<property name="email"                   column="email"                   length="50" />
+	<property name="site"                    column="site"                    length="30" />
+	<property name="logradouro"              column="logradouro"              length="100" />
+	<property name="bairro"                  column="bairro"                  length="50" />
+	<property name="cidade"                  column="cidade"                  length="50" />
+	<property name="uf"                      column="uf"                      length="50" />
+	<property name="cep"                     column="cep"                     length="10" />
+	<property name="urlImagem"               column="url_imagem"              length="150" />
+	
+	    <bag name ="Telefone"  cascade="all" lazy="true">
+		<key column ="codigo_empresa"/>
+		<one-to-many class ="modelo.TelefoneEmpresa" />	
+		</bag>
+
+	</class>
+	</hibernate-mapping>

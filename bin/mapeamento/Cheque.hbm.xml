@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<hibernate-mapping>
+	
+	<class name="modelo.Cheque" table="cheque">
+	
+	<id name="codigo" column="codigo_cheque">
+	
+	<generator class="increment"></generator>
+		
+	</id>
+	
+	<property name="dataEmissao"             column="dataEmissao" 			length="10"      />
+	<property name="dataVencimento"          column="dataVencimento" 		length="10"      />
+	<property name="dataAviso"               column="dataAviso" 			length="10"      />
+	<property name="valor"                   column="valor"                 length="20"      />
+	<property name="complemento"             column="complemento"           length="20"      />
+	<property name="numeroCheque"            column="numeroCheque"          length="30"      />
+	<property name="banco"                   column="banco"                 length="50"      />
+	<property name="agencia"                 column="agencia"               length="10"      />
+	<property name="numeroConta"             column="numeroConta"           length="10"      />
+	<property name="observacao"              column="observacao"            length="1000"    />
+
+	</class>
+	</hibernate-mapping>

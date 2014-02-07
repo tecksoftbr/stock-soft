@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+
+		<property name="hibernate.connection.url">
+			jdbc:mysql://localhost:3306/stocksoft
+		</property>
+
+		<property name="hibernate.connection.username">
+			root
+		</property>
+
+		<property name="hibernate.connection.password">
+			123456
+		</property>
+
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+
+		<!-- Mapeamentos -->
+		
+		
+       <!-- <mapping resource="mapeamento/Agenda.hbm.xml" /> -->
+	     <!-- <mapping resource="mapeamento/TelefoneAgenda.hbm.xml"/>-->
+		 <!-- <mapping resource="mapeamento/EmailAgenda.hbm.xml"/>-->
+		  <mapping resource="mapeamento/Usuario.hbm.xml" /> 
+		  <mapping resource="mapeamento/Cheque.hbm.xml"/>
+		  <mapping resource="Mapeamento/Fornecedor.hbm.xml" /> 
+		  <mapping resource="mapeamento/TelefoneFornecedor.hbm.xml"/>
+		  
+		  
+		  <!-- 
+		<mapping resource="mapeamento/Produto.hbm.xml"/>
+		<mapping resource="mapeamento/Estoque.hbm.xml"/> 
+		  <mapping resource="Mapeamento/Empresa.hbm.xml" /> 
+		  <mapping resource="Mapeamento/Telefone_Empresa.hbm.xml" /> 
+		 <mapping resource="Mapeamento/Produto.hbm.xml" /> 
+
+         -->
+		
+		
+
+
+
+	</session-factory>
+</hibernate-configuration>

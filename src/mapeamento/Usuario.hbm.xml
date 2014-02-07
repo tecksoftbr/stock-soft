@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+	<hibernate-mapping>
+	
+		<class name="modelo.Usuario" table="usuario">
+		<id name="codigo" column="codigo_usuario">
+		<generator class="increment"></generator>
+		</id>
+	
+		<property  name="nomeCompleto"          column="nome"                    length="80"   />    
+		<property  name="apelido"               column="apelido"                 length="15"   />     
+		<property  name="senha"                 column="senha"                   length="20"   />           
+		<property  name="perguntaSecreta"       column="pergunta_secreta"        length="100"  />     
+		<property  name="respostaSecreta"       column="resposta_secreta"        length="100"  />
+		<property  name="dataAniversario"       column="data_aniversario"        length="10"   />
+		<property  name="urlfoto"       		column="foto_usuario"            length="1000" />  
+       
+		</class>
+	</hibernate-mapping>

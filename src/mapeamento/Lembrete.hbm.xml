@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+		<hibernate-mapping>
+	<class name="modelo.Lembrete" table="lembrete">
+	<id name="codigo" column="codigo_lembrete">
+	<generator class="increment"></generator>
+	</id> 
+	
+	<property name="titulo"             column="titulo"                     length="30" />
+	<property name="local"              column="local"                      length="80" />
+	<property name="descricao"          column="descricao"                  length="80" />
+	<property name="tipo"               column="tipo"                       length="30" />
+	<property name="data"               column="data"                       length="14" />
+	<property name="dataCadastro"       column="dataCadastro"               length="14" />
+	<property name="dataAviso"          column="dataAviso"                  length="14" />
+
+	</class>
+	</hibernate-mapping>
